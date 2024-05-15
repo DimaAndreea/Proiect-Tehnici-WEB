@@ -1,0 +1,132 @@
+html{
+    font-size: 18px;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    transition: font-size 300ms ease;
+}
+
+
+.produse-papetarie{
+    max-width: 100%;
+}
+
+
+#grid-pagina{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4,1fr);    /*1fr 1fr 1fr 1fr*/
+    grid-template-areas: "welcome welcome welcome welcome"
+                         "tabel tabel calendar calendar"
+                         "tabel tabel anunturi anunturi"
+                         "ut_online date_ut date_ut site_server"
+                         "diverse diverse diverse diverse";
+}
+
+#grid-pagina>*{
+    outline: 2px solid var(--culoare4);
+    padding: 1em;
+}
+
+#grid-pagina>figure{
+    margin: 0;
+}
+
+#tabel{
+    grid-area:tabel;
+}
+
+#calendar{
+    grid-area: calendar;
+}
+
+#diverse{
+    grid-area: diverse;
+}
+
+#welcome{
+    grid-area: welcome;
+}
+
+#anunturi{
+    grid-area: anunturi;
+}
+
+/*
+#orar{
+    grid-area: orar;
+}
+*/
+
+#ut_online{
+    grid-area: ut_online;
+}
+#date_ut{
+    grid-area: date_ut;
+}
+
+#site_server{
+    grid-area: site_server;
+}
+
+
+.intro-oferte{
+    font-size: 1.5rem;
+}
+
+
+.plic{
+    width: 50%;
+}
+
+.creioane{
+    width: 50%;
+}
+
+.agenda{
+    width: 50%;
+}
+
+@media screen and (max-width:1200px){
+
+    html{
+        font-size: 15px;
+        animation: none;
+    }
+
+    #grid-pagina{
+        width: 100%;
+        grid-template-columns: repeat(2,1fr);  
+        grid-template-areas: "welcome  welcome"
+                             "tabel calendar"
+                             "tabel anunturi"
+                             "ut_online date_ut"
+                             "diverse site_server";
+    }
+
+    
+}
+
+@media screen and (max-width:800px){
+
+    html{
+        font-size: 12px;
+        animation: none;
+    }
+
+    #grid-pagina{
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;  
+        grid-template-areas: "welcome"
+                             "tabel"
+                             "calendar"
+                             "anunturi"
+                             "ut_online"
+                             "date_ut"
+                             "diverse"
+                             "site_server";
+    }
+}
+
+
