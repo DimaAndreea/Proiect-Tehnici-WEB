@@ -1,0 +1,32 @@
+body{
+    --spatiere: 100px;
+    padding-left: var(--spatiere);
+    padding-right: var(--spatiere);
+}
+
+p{
+    color:black;
+    border:2px solid var(--culoare5);
+}
+
+h2{
+    background-color: var(--culoare5);
+}
+
+
+.italic {
+    font-style: italic;
+}
+
+
+.bold {
+    font-weight: bold;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.culoare-text {
+    color: red; 
+}
