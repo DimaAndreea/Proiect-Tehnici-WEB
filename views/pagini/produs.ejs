@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <meta name="description" 
+        content="Papetaria Papirus ofera rechizite, accesorii pentru birou, produse din hartie. Livrare la domiciliu oriunde in Romania!">
+        <meta name="keywords"
+        content="papetarie, papetaria papirus, rechizite, caiet, caiete, hartie, consumabile imprimanta, instrumente de scris, pix, pixuri, creion, creioane, acuarele, transport la domiciliu, bucuresti, capsatoare">
+        
+        <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
+
+        <title> Papetaria Papirus - home</title>
+        <%- include("../fragmente/head") %>     
+        <link href="/resurse/css/produs.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+    <%- include("../fragmente/header") %>
+
+    <main>
+        <section>
+            <h2>Pagină produs</h2>
+                <article id="art-produs">
+                    <h3><span class="nume"><%- locals.prod.nume %></span></h3>
+                    <p>Pret: <span class="pret"><%- locals.prod.pret %> </span></p>
+                    <p>Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
+                    <p>Ingrediente: <span class="ingrediente"><%- locals.prod.ingrediente %> </span></p>
+                    <p>Calorii: <span class="calorii"><%- locals.prod.calorii %> </span></p>
+                    <p>Gramaj: <span class="gramaj"><%- locals.prod.gramaj %> </span></p>
+                    <p>Categorie: <span class="categorie"><%- locals.prod.categorie %> </span></p>
+                    <p>Pentru diabetici: <span class="pt_diabetici"><%- locals.prod.pt_diabetici %> </span></p>
+                    <p>Data adăugare: <span class="categorie"><%- locals.prod.data_adaugare %> </span></p>
+                    <figure class="imag-produs">
+                        <img  src="/resurse/imagini/produse/<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]" />
+                    </figure>    
+                </article>
+            
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>
