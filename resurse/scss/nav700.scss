@@ -1,0 +1,140 @@
+@keyframes aparitie_hamburger {
+	0% {
+		border: 1.75px solid black;
+		transform: rotate(45deg);
+		opacity: 0;
+	}
+	50% {
+		border: 1.75px solid grey;
+		transform: rotate(-45deg);
+		opacity: 0.5;
+	}
+	100% {
+		border: 1.75px solid white;
+		transform: rotate(0deg);
+		opacity: 1;
+	}
+}
+
+@keyframes aparitie_meniu_p {
+	0% {
+		opacity: 0;
+		transform: rotate(-90deg);
+	}
+	100% {
+		opacity: 1;
+		transform: rotate(0deg);
+	}
+}
+
+@keyframes aparitie_meniu_p_btn {
+	0% {
+		transform: scale(0,0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+nav {
+	height: var(--inaltime-meniu);
+	ul {
+		&.meniu {
+			li {
+				width: 100%;
+			}
+			& > li {
+				ul {
+					position: absolute;
+					width: 100%;
+					z-index: 200;
+					transform: scale(1,1);
+					opacity: 1;
+				}
+				&:hover {
+					& > ul {
+						z-index: 200;
+						animation: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+#hamburger {
+	display: block;
+}
+
+#container-hamburger {
+	display: flex;
+	height: var(--inaltime-meniu);
+	min-width: 5%;
+	width: 5%;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.linie-hamburger {
+	border: 1.75px solid white;
+}
+
+ul {
+	&.meniu {
+		display: none;
+		position: absolute;
+		width: 100%;
+		& > li {
+			& > a {
+				&:before {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					height: 4px;
+					background-color: var(--culoare1);
+				}
+			}
+		}
+	}
+}
+
+#ch-menu:checked + ul.meniu {
+	display: block;
+	z-index: 2;
+	position: relative;
+	background-color: var(--culoare1);
+	transform: rotate(90deg);
+	transform-origin: top left;
+	animation-name: aparitie_meniu_p;
+	animation-duration: 0.7s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+}
+
+#ch-menu:checked + ul.meniu > li > div,
+#ch-menu:checked + ul.meniu > li > a {
+	z-index: 2;
+	position: relative;
+	transform-origin: 50% 50%;
+	animation-name: aparitie_meniu_p_btn;
+	animation-iteration-count: 1;
+	animation-duration: 0.7s;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;
+}
+
+ul {
+	&.meniu {
+		& > li {
+			& > a {
+				&:hover {
+					&:before {
+						background-color: var(--culoare3);
+					}
+				}
+			}
+		}
+	}
+}
