@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papetaria Papirus - seturi de produse</title>
+    <link rel="stylesheet" href="/resurse/css/style.css">
+    <%- include("../fragmente/head.ejs") %>
+</head>
+<body>
+    <%- include("../fragmente/header.ejs") %>
+
+    <main>
+        <h1>Seturi de produse</h1>
+        <div class="seturi">
+            <% seturi.forEach(set => { %>
+                <div class="set">
+                    <h2><%= set.nume_set %></h2>
+                    <p><%= set.descriere_set %></p>
+                    <ul>
+                        <% set.produse.forEach((produs, index) => { %>
+                            <li>
+                                <a href="/produs/<%= set.produs_ids[index] %>"><%= produs %></a> - <%= set.preturi[index] %> lei
+                            </li>
+                        <% }) %>
+                    </ul>
+                    <p>Preț total: <%= set.pret_total.toFixed(2) %> RON</p>
+                    <p>Preț final cu reducere: <%= set.pret_final.toFixed(2) %> RON</p>
+                </div>
+            <% }) %>
+        </div>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+</body>
+</html>

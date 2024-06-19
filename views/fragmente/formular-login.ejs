@@ -1,0 +1,17 @@
+<% if(!locals.utilizator) { %>   <!-- ADICA DOAR DACA UTILIZATORUL NU ESTE LOGAT  -->
+    <form id="form_inreg"  method="post" class="date"  action="/login"  enctype="multipart/form-data">
+        <p>
+            <label>
+                Username: <input type="text" name="username" id="inp-username" value="" required pattern="[A-Za-z0-9]+">
+            </label>
+        </p>
+        <!-- campurile text sunt name urile practic -->
+        <p>
+            <label>
+                Parola: <input id="parl" type="password" required  name="parola" value="">   <!-- campuri text: username si parola-->
+            </label>
+        </p>
+        <p><input type="submit" value="Logare"></p>
+    </form>
+<% }  %>
+<p><%- locals.mesajLogin %></p>

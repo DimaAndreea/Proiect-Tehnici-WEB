@@ -1,0 +1,39 @@
+<section id="galerie-statica">
+    <h3>Galerie</h3>  
+        <div id="grid-galerie">
+            <% 
+            var Vanotimpuri = ["primavara", "vara", "toamna", "iarna"];
+            var d = new Date();
+            var luna_curenta = d.getMonth();
+            
+            var anotimp_curent;
+            if (luna_curenta >= 2 && luna_curenta < 6) {
+                anotimp_curent = Vanotimpuri[0]; // primavara
+            } else if (luna_curenta >= 6 && luna_curenta < 9) {
+                anotimp_curent = Vanotimpuri[1]; // vara
+            } else if (luna_curenta >= 9 && luna_curenta < 12) {
+                anotimp_curent = Vanotimpuri[2]; // toamna
+            } else {
+                anotimp_curent = Vanotimpuri[3]; // iarna
+            }
+            
+            for (let imag of locals.imagini) { 
+                if (imag?.anotimp?.includes(anotimp_curent)) { 
+            %>
+                <figure>
+                    <picture>
+                        <source srcset="<%= imag.fisier_mediu %>" media="(max-width:1000px)" />
+                        <source srcset="<%= imag.fisier_mic %>" media="(max-width:700px)" />
+                        <img src="<%= imag.fisier %>" alt="produse-papetarie">
+                    </picture>
+                    <figcaption>
+                        <%= imag.descriere %>
+                    </figcaption>
+                </figure>
+            <% 
+                } 
+            } 
+            %>
+        </div>
+        
+</section>

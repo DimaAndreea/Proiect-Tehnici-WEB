@@ -18,7 +18,7 @@
     <link rel="mask-icon" href="resurse/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <link rel="shortcut icon" href="resurse/favicon/favicon.ico">
     <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="resurse/favicon/browserconfig.xml">
+    <meta name="msapplication-config" content=/resurse/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
@@ -47,6 +47,8 @@
 
     <link rel="stylesheet" href="resurse/css/produs.css" type="text/css" />
 
+    <script src="resurse/js/tema.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 
 
     <!--<style>
@@ -71,11 +73,33 @@
     <header class="c1" id="h1">
         <h1> Papetaria <span> Papirus </span></h1>
 
+        <div class="toggle-container">
+            <label id="schimba_tema" class="toggle">
+                <input type="checkbox" id="tema_toggle">
+                <div class="slider"></div>
+                <div class="icons">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </div>
+            </label>
+        </div>
+
     </header>
+
+    
     <nav class="nav">
-        <!-- aici -->
+        <!-- aici 
         <label id="hamburger" for="ch-menu">
             <img src="resurse/imagini/hamburger.jpg" alt="menu">
+        </label>
+        -->
+
+        <label id="hamburger" for="ch-menu">
+            <div id="container-hamburger">
+                <div class="linie-hamburger"></div>
+                <div class="linie-hamburger"></div>
+                <div class="linie-hamburger"></div>
+            </div>
         </label>
 
         <input id="ch-menu" type="checkbox">
@@ -90,6 +114,7 @@
                     <li><a href="#produse"> Showroom virtual</a></li>
                     <li><a href="#orar">Program de lucru</a></li>
                     <li><a href="#index-intrebari">Întrebări</a></li>
+                    <li><a href="/index#galerie-statica">Galerie</a></li>
                 </ul>
 
 
@@ -109,9 +134,10 @@
             <li>
                 <div>Produse</div>
                 <ul>
-                    <li><a href="#"> Articole de hartie </a></li>
-                    <li><a href="#"> Instrumente de scris </a></li>
-                    <li><a href="#"> Accesorii de birou </a></li>
+                    <li><a href="/produse"> Toate </a></li>
+                    <li><a href="/produse"> Articole de hartie </a></li>
+                    <li><a href="/produse"> Instrumente de scris </a></li>
+                    <li><a href="/produse"> Accesorii de birou </a></li>
                 </ul>
 
             </li>
@@ -123,72 +149,10 @@
     <main>
 
         <p>
-            <a href="#produse" class="link-frumos">Produse</a>
+            <a href="/produse" class="link-frumos">Produse</a>
         </p>
 
 
-
-
-        <section id="galerie-statica">
-            <h2>Galerie</h2>
-            <div id="grid-galerie">
-                <figure>
-                    <img src="./resurse/imagini/galerie_statica/stilou_parker.jpg" alt="stilou_parker">
-                    <figcaption> Stilou Parker </figcaption>
-                </figure>
-                <figure>
-                    <img src="./resurse/imagini/galerie_statica/capsator_albastru.jpg" alt="capsator">
-                    <figcaption>Capsator</figcaption>
-                </figure>
-                <figure>
-                    <img src="./resurse/imagini/galerie_statica/pix_pilot.png" alt="pilot">
-                    <figcaption> Pix Pilot Frixion </figcaption>
-                </figure>
-                <figure>
-                    <img src="./resurse/imagini/galerie_statica/capsator_albastru.jpg" alt="pilot">
-                    <figcaption> Pix Pilot Frixion </figcaption>
-                </figure>
-                <figure>
-                    <img src="./resurse/imagini/galerie_statica/creion_mecanic_fc.jpg" alt="pilot">
-                    <figcaption> Pix Pilot Frixion </figcaption>
-                </figure>
-                <figure>
-                    <img src="./resurse/imagini/galerie_statica/dosar_plic.png" alt="pilot">
-                    <figcaption> Pix Pilot Frixion </figcaption>
-                </figure>
-                <figure>
-                    <img src="./resurse/imagini/galerie_statica/dosar_sina.jpg" alt="pilot">
-                    <figcaption> Pix Pilot Frixion </figcaption>
-                </figure>
-                <figure>
-                    <img src="./resurse/imagini/galerie_statica/kuru_toga.jpg" alt="pilot">
-                    <figcaption> Pix Pilot Frixion </figcaption>
-                </figure>
-                <figure>
-                    <img src="./resurse/imagini/galerie_statica/mont_blanc.jpg" alt="pilot">
-                    <figcaption> Pix Pilot Frixion </figcaption>
-                </figure>
-                <figure>
-                    <img src="./resurse/imagini/galerie_statica/pix_bic.jpg" alt="pilot">
-                    <figcaption> Pix Pilot Frixion </figcaption>
-                </figure>
-                <figure>
-                    <img src="./resurse/imagini/galerie_statica/plic_pastel.jpg" alt="pilot">
-                    <figcaption> Pix Pilot Frixion </figcaption>
-                </figure>
-                <figure>
-                    <img src="./resurse/imagini/galerie_statica/postituri.jpg" alt="pilot">
-                    <figcaption> Pix Pilot Frixion </figcaption>
-                </figure>
-                <figure>
-                    <img src="./resurse/imagini/galerie_statica/stilou-faber-castell.jpg" alt="pilot">
-                    <figcaption> Pix Pilot Frixion </figcaption>
-                </figure>
-
-
-            </div>
-        
-        </section>
 
 
         
@@ -209,12 +173,13 @@
 
 
                 <p class="intro"> Vă <b>mulțumim</b> că ne vizitați site-ul! </p>
-
+                <!--
                 <div class="intro-oferte">
                     <div> Instrumente de scris </div>
                     <div> Articole din hartie </div>
                     <div> Accesorii de birou </div>
                 </div>
+                -->
 
                 <p class="anunt intro">Indiferent de locație sau de nevoile dumneavoastră, suntem aici să vă oferim o
                     experiență de cumpărături fără probleme și să vă asigurăm că aveți tot ce aveți nevoie pentru a vă
@@ -524,68 +489,13 @@
 
 
             <section id="diverse">
-                <h2>Informații diverse</h2>
+                <h2>DIVERSE</h2>
 
-                <article>
-                    <h2>Programul nostru de lucru: </h2>
-                    <div class="scroll">
-                        <table id="orar">
-                            <thead>
+                
+                  
 
-                                <tr>
-                                    <th>Perioadă</th>
-                                    <th>Zi</th>
-                                    <th> Interval orar </th>
-                                </tr>
-                            </thead>
 
-                            <tbody>
-                                <tr>
-                                    <td rowspan="5">Zile<br />Lucrătoare</td>
-                                    <td>Luni</td>
-                                    <td> 10:00 - 20:00</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Marti</td>
-                                    <td> 10:00 - 20:00 </td>>
-                                </tr>
-
-                                <tr>
-                                    <td>Miercuri</td>
-                                    <td> 10:00 - 20:00 </td>
-                                </tr>
-
-                                <tr>
-                                    <td>Joi</td>
-                                    <td> 10:00 - 20:00 </td>
-                                </tr>
-
-                                <tr>
-                                    <td>Vineri</td>
-                                    <td> 10:00 - 20:00</td>
-                                </tr>
-
-                                <tr>
-                                    <td rowspan="2">Weekend</td>
-                                    <td>Sambata</td>
-                                    <td> 10:00 - 18:00 </td>
-                                </tr>
-
-                                <tr>
-                                    <td>Duminica</td>
-                                    <td> 10:00 - 14:00 </td>
-                                </tr>
-                            </tbody>
-
-                            <tfoot>
-                                <tr>
-                                    <td colspan="6">Închis cu ocazia sărbătorilor legale.</td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-                </article>
+                
 
                 <article id="promotii">
                     <h3>Promoții</h3>
@@ -770,6 +680,64 @@
                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </p>
+
+            <article>
+                <h3>Programul nostru de lucru: </h3>
+
+                <div class="scroll">
+                    <details>
+                        <summary>Click aici pentru a vedea orarul</summary>
+                        <table id="orar">
+                            <thead>
+                                <tr>
+                                    <th>Perioadă</th>
+                                    <th>Zi</th>
+                                    <th>Interval orar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="5">Zile<br />Lucrătoare</td>
+                                    <td>Luni</td>
+                                    <td>10:00 - 20:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Marți</td>
+                                    <td>10:00 - 20:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Miercuri</td>
+                                    <td>10:00 - 20:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Joi</td>
+                                    <td>10:00 - 20:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Vineri</td>
+                                    <td>10:00 - 20:00</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2">Weekend</td>
+                                    <td>Sâmbătă</td>
+                                    <td>10:00 - 18:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Duminică</td>
+                                    <td>10:00 - 14:00</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3">Închis cu ocazia sărbătorilor legale.</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </details>
+                </div>
+
+            </article>
+
             </p>
             <i class="fa-solid fa-envelope"></i>
             <a href="mailto:papetaria.papirus@gmail.com"> Mail Papetaria Papirus | </a>
@@ -788,7 +756,8 @@
 
 
 
-    <div class="banner">Acesta este un proiect școlar!</div>
+    
+    <div id="banner"><b>Acesta este un proiect scolar!</b><br><button class="btn btn-primary" id="ok_cookies">Accepta cookies</button></div>
 </footer>
 
 </body>

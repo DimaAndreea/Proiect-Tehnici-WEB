@@ -1,0 +1,18 @@
+#calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 0.2rem;
+  color: var(--culoare-text-selectat);
+}
+
+#calendar div:nth-child(n+8).zi {
+  border: 1px solid black;
+}
+
+#calendar div:nth-child(n+8).eveniment {
+  background-color: magenta;
+}
+
+.container-calendar {
+  width: 200px;
+}

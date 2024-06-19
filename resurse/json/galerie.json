@@ -1,39 +1,267 @@
 {
-	"cale_galerie":"resurse/imagini/galerie",
+	"cale_galerie":"resurse/imagini/galerie_statica",
 	"imagini": [
 		{
-			"fisier":"briose-frisca.png",
-			"descriere":"Brioșe",
-			"luni":["martie","februarie","noiembrie","aprilie"]   
+			"fisier":"agenda.jpg",
+			"descriere":"Agenda",
+			"anotimp":"iarna"   
 		},
 		{
-			"fisier":"clatite.png",
-			"descriere":"Clătite cu dulceață",
-			"luni":["ianuarie","februarie","iunie"]
+			"fisier":"agrafe.jpg",
+			"descriere":"Agrafe",
+			"anotimp":"iarna"   
+		},
+		{
+			"fisier":"agrafe2.jpg",
+			"descriere":"Agrafe colorate",
+			"anotimp":"iarna"   
+		},
+		{
+			"fisier":"ascutitoare_el.jpg",
+			"descriere":"Ascutitoare electrica",
+			"anotimp":"iarna"   
+		},
+		{
+			"fisier":"ascutitoare_manivela.jpg",
+			"descriere":"Ascutitoare cu manivela",
+			"anotimp":"iarna"   
+		},
+		{
+			"fisier":"banda.jpg",
+			"descriere":"Capsator",
+			"anotimp":"iarna"   
+		},
+		{
+			"fisier":"bloc1.jpg",
+			"descriere":"Capsator",
+			"anotimp":"iarna"   
+		},
+		{
+			"fisier":"bloc2.jpg",
+			"descriere":"Creion mecanic faber castell",
+			"anotimp":"iarna"   
 			
 		},
 		{
-			"fisier":"gogosi.png",
-			"descriere":"Gogoși glazurate",
-			"luni":["ianuarie","noiembrie","iunie","martie","aprilie"]
+			"fisier":"caiet1.jpg",
+			"descriere":"Dosar plic",
+			"anotimp":"iarna"   
 		},
 		{
-			"fisier":"tort-scortisoara.png",
-			"descriere":"Tort cu scorțisoară",
-			
-			"luni":["noiembrie","aprilie"]
+			"fisier":"caiet2.jpg",
+			"descriere":"Dosar cu sina",
+			"anotimp":"iarna"   
 		},
 		{
-			"fisier":"prajitura-ciocolata.png",
-			"descriere":"Prăjitură cu ciocolată"
+			"fisier":"caiet3.jpg",
+			"descriere":"Echer",
+			"anotimp":"iarna"   					
 		},
 		{
-			"fisier":"tarta-afine.png",
-			"descriere":"Tartă cu afine"
+			"fisier":"caiet4.jpg",
+			"descriere":"Caiet",
+			"anotimp":"iarna"   
 		},
 		{
-			"fisier":"tort-trandafiri.png",
-			"descriere":"Tort special"
+			"fisier":"caiet5.jpeg",
+			"descriere":"Caiet",
+			"anotimp":"iarna"   
+		},
+		{
+			"fisier":"caiet6.jpg",
+			"descriere":"Caiet",
+			"anotimp":"primavara"   
+		},
+		{
+			"fisier":"caiet7.jpg",
+			"descriere":"Caiet",
+			"anotimp":"primavara"   
+		},
+		{
+			"fisier":"caiet8.jpg",
+			"descriere":"Caiet de muzica",
+			"anotimp":"primavara"   
+		},
+		{
+			"fisier":"caiet9.jpg",
+			"descriere":"Caiet de biologie",
+			"anotimp":"primavara"   
+		},
+		{
+			"fisier":"calc.jpg",
+			"descriere":"Calculator de buzunar",
+			"anotimp":"primavara"   
+		},
+		{
+			"fisier":"calculator.jpg",
+			"descriere":"Calculator de birou",
+			"anotimp":"primavara"   
+		},
+		{
+			"fisier":"capsator1.jpg",
+			"descriere":"Capsator",
+			"anotimp":"primavara"   
+		},
+		{
+			"fisier":"capsator2.jpg",
+			"descriere":"Capsator",
+			"anotimp":"primavara"   
+		},
+		{
+			"fisier":"capsator3.jpg",
+			"descriere":"Capsator mic",
+			"anotimp":"primavara"   
+		},
+		{
+			"fisier":"capse.jpg",
+			"descriere":"Capse",
+			"anotimp":"primavara"   
+		},
+		{
+			"fisier":"carioci.jpg",
+			"descriere":"Carioci colorate",
+			"anotimp":"primavara"   
+		},
+		{
+			"fisier":"clip.jpg",
+			"descriere":"Clip",
+			"anotimp":"primavara"   
+		},
+		{
+			"fisier":"clipboard1.jpg",
+			"descriere":"Clipboard simplu",
+			"anotimp":"primavara"   
+		},
+		{
+			"fisier":"clipboard2.jpg",
+			"descriere":"Clipboard dublu",
+			"anotimp":"vara"   
+		},
+		{
+			"fisier":"compas.jpg",
+			"descriere":"Compas",
+			"anotimp":"vara"   
+		},
+		{
+			"fisier":"creioane_colorate.jpg",
+			"descriere":"Creioane colorate",
+			"anotimp":"vara"   
+		},
+		{
+			"fisier":"creion_mecanic.png",
+			"descriere":"Creion mecanic",
+			"anotimp":"vara"   
+		},
+		{
+			"fisier":"creion1.jpg",
+			"descriere":"Creion",
+			"anotimp":"vara"   
+		},
+		{
+			"fisier":"creion2.jpg",
+			"descriere":"Creion",
+			"anotimp":"vara"   
+		},
+		{
+			"fisier":"creion3.jpg",
+			"descriere":"Creion",
+			"anotimp":"vara"   
+		},
+		{
+			"fisier":"creion4.png",
+			"descriere":"Creion",
+			"anotimp":"vara"   
+		},
+		{
+			"fisier":"creion5.jpg",
+			"descriere":"Creion mecanic Uni Kuru Toga",
+			"anotimp":"vara"   
+		},
+		{
+			"fisier":"creion6.jpg",
+			"descriere":"Creion mecanic Uni Kuru Toga",
+			"anotimp":"vara"   
+		},
+		{
+			"fisier":"creion-mecanic1.jpg",
+			"descriere":"Capsator",
+			"anotimp":"vara"   
+		},
+		{
+			"fisier":"creion-mecanic2.jpg",
+			"descriere":"Capsator",
+			"anotimp":"vara"   
+		},
+		{
+			"fisier":"dosar_plic.png",
+			"descriere":"Capsator",
+			"anotimp":"vara"   
+		},
+		{
+			"fisier":"dosar_sina.jpg",
+			"descriere":"Capsator",
+			"anotimp":"toamna"   
+		},
+		{
+			"fisier":"echer.jpg",
+			"descriere":"Capsator",
+			"anotimp":"toamna"   
+		},
+		{
+			"fisier":"echer2.jpeg",
+			"descriere":"Capsator",
+			"anotimp":"toamna"   
+		},
+		{
+			"fisier":"etichete.jpg",
+			"descriere":"Capsator",
+			"anotimp":"toamna"   
+		},
+		{
+			"fisier":"foarfeca.jpg",
+			"descriere":"Capsator",
+			"anotimp":"toamna"   
+		},
+		{
+			"fisier":"guma.jpg",
+			"descriere":"Capsator",
+			"anotimp":"toamna"   
+		},
+		{
+			"fisier":"guma2.jpg",
+			"descriere":"Capsator",
+			"anotimp":"toamna"   
+		},
+		{
+			"fisier":"hartie_colorata.jpg",
+			"descriere":"Capsator",
+			"anotimp":"toamna"   
+		},
+		{
+			"fisier":"lipici.jpg",
+			"descriere":"Capsator",
+			"anotimp":"toamna"   
+		},
+		{
+			"fisier":"lipici2.jpg",
+			"descriere":"Capsator",
+			"anotimp":"toamna"   
+		},
+		{
+			"fisier":"marker.jpg",
+			"descriere":"Capsator",
+			"anotimp":"toamna"   
+		},
+		{
+			"fisier":"mina.jpg",
+			"descriere":"Capsator",
+			"anotimp":"toamna"   
+		},
+		{
+			"fisier":"mina2.jpg",
+			"descriere":"Capsator",
+			"anotimp":"toamna"   
 		}
+
 	]
 }

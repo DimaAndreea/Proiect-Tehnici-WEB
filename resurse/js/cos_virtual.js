@@ -33,7 +33,7 @@ window.addEventListener("load",function(){
 				h2.innerHTML=prod.nume;
 				article.appendChild(h2);
 				let imagine=document.createElement("img");
-				imagine.src="/resurse/imagini/produse/"+prod.imagine;
+				imagine.src="/resurse/imagini/galerie_statica/"+prod.imagine;
 				article.appendChild(imagine);
 				
 				let descriere=document.createElement("p");

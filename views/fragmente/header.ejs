@@ -1,11 +1,29 @@
- <header class="c1" id="h1">
+<header class="c1" id="h1">
         <h1> Papetaria <span> Papirus </span></h1>
 
-    </header>
+
+        <div class="toggle-container">
+            <label id="schimba_tema" class="toggle">
+                <input type="checkbox" id="tema_toggle">
+                <div class="slider"></div>
+                <div class="icons">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </div>
+            </label>
+        </div>
+
+
+</header>
+
+
     <nav>
-        <!-- aici -->
         <label id="hamburger" for="ch-menu">
-            <img src="resurse/imagini/hamburger.jpg" alt="menu">
+            <div id="container-hamburger">
+                <div class="linie-hamburger"></div>
+                <div class="linie-hamburger"></div>
+                <div class="linie-hamburger"></div>
+            </div>
         </label>
 
         <input id="ch-menu" type="checkbox">
@@ -20,11 +38,12 @@
                     <li><a href="/index#produse"> Showroom virtual</a></li>
                     <li><a href="/index#orar">Program de lucru</a></li>
                     <li><a href="/index#index-intrebari">Întrebări</a></li>
+                    <li><a href="/index#galerie-statica">Galerie</a></li>
                 </ul>
 
 
             </li>
-            <li><a href="#">Inregistrare</a></li>
+            <li><a href="/inregistrare">Inregistrare</a></li>
             <li>
                 <div>Despre</div>
                 <ul>
@@ -38,12 +57,23 @@
                 <div>Produse</div>
                 <ul>
                     <li><a href="/produse">Toate</a></li>
-                    <li><a href="/produse/?tip=cofetarie"> Articole de hartie </a></li>
-                    <li><a href="/produse/?tip=gelaterie"> Instrumente de scris </a></li>
-                    <li><a href="/produse/?tip=patiserie"> Accesorii de birou </a></li>
+                    <li><a href="/produse/?tip=articole de hartie"> Articole de hartie </a></li>
+                    <li><a href="/produse/?tip=instrumente de scris"> Instrumente de scris </a></li>
+                    <li><a href="/produse/?tip=accesorii de birou"> Accesorii de birou </a></li>
                 </ul>
 
             </li>
-            <li><a href="#contact">Contact</a></li>
+
+            <li><a href="/cos-virtual">Cos</a></li>
+
+            <li><a href="/contact">Contact</a></li>
+
+            <li><a href="/galerie">Galerie</a></li>
+
+            <%- include("submeniu-administrare.ejs")  %>
+            <%- include("submeniu-utilizator-logat.ejs")  %>
+
         </ul>
     </nav>
+
+    

@@ -2,7 +2,7 @@
 <html lang="ro">
 
 <head>
-    <%- includes("../fragmente/head.ejs") %>
+    <%- include("../fragmente/head.ejs") %>
 
     <title> Papetaria Papirus </title>
     <meta name="description"
@@ -15,61 +15,48 @@
 
 <body>
    
-    <%- includes("../fragmente/header.ejs") %>
+    <%- include("../fragmente/header.ejs") %>
 
     <main>
         <p>
             <a href="#produse" class="link-frumos">Produse</a>
         </p>
         
-        <section id="galerie-statica">
-            <h2>Galerie</h2>
-            <div id="grid-galerie">
-                <% 
-                    var vLuni=["ianuarie", "februarie", "martie", "aprilie", "iunie", "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie"];
-                    var d=new Date();
-                    var lunaCurenta=vLuni[d.getMonth()];
-                    for (let imag of locals.imagini) { 
-                        if (imag?.luni?.includes(lunaCurenta)) {
-                        %>
-                            <figure>
-                                <picture>
-                                    
-                                    <source srcset="<%= imag.fisier_mediu %>" media="(max-width:1200px)"/>
-                                    <img src="<%= imag.fisier %>" alt="prajituri">
-                                </picture>
-                            
-                            <figcaption><%= imag.descriere%></figcaption>
-                            </figure>
-                    <% } %>
-                <% } %>
-            
-            </div>
-        </section>
 
+      
+        
+        
 
-        <section id="galerie-animata">
-				<h2>Galerie animata</h2>
-				<%- include("../fragmente/galerie-animata.ejs")  %>
-		</section>
-
+       
         <div id="grid-pagina">
             <section id="welcome">
                 <h2> Bine ati venit! </h2>
-                <button type="button" class="btn btn-primary btn-lg">Stil-1-mare</button>
-                <p> Ip: <%- locals.ip %> </p>
-                <p>
+                
+                <%- include("../fragmente/formular-login.ejs") %>
+                <%- include("../fragmente/locatie.ejs") %>
+                <%- include("../fragmente/useri-online.ejs") %>
+                <%- include("../fragmente/ora-server-client.ejs") %>
+                
+
+
+
+                <button type="button" class="btn btn-primary btn-lg">Stil-1-mare</button> 
+                <p> Ip: <%- locals.ip %> </p> 
+                <p> 
                     Magazinul nostru vă întâmpină cu o gamă diversificată de produse pentru birou și accesorii esențiale pentru a vă organiza spațiul de lucru și pentru a face fiecare zi mai productivă și mai plăcută.
                     De la caiete și agende până la creioane, markeri și accesorii de birou, suntem dedicati să vă oferim tot ceea ce aveți nevoie pentru a vă organiza și a vă eficientiza munca de zi cu zi. Indiferent dacă lucrați de acasă, la birou sau sunteți în căutarea celor mai potrivite articole pentru școală, veți găsi tot ce aveți nevoie în selecția noastră cuprinzătoare.
                 </p>
 
                 <p class="intro"> Vă <b>mulțumim</b> că ne vizitați site-ul! </p>
 
+                <!--
                 <div class="intro-oferte">
+                    <div> Toate </div>
                     <div> Instrumente de scris </div>
                     <div> Articole din hartie </div>
                     <div> Accesorii de birou </div>
                 </div>
+                -->
 
                 <p class="anunt intro">Indiferent de locație sau de nevoile dumneavoastră, suntem aici să vă oferim o experiență de cumpărături fără probleme și să vă asigurăm că aveți tot ce aveți nevoie pentru a vă organiza și a vă îmbunătăți spațiul de lucru sau de învățare.</p>
 
@@ -80,9 +67,9 @@
                             <figure>
                                 <picture>
                                     <!-- il ia pe primul care se potriveste cu query-ul din media-->
-                                    <source srcset="./resurse/imagini/galeria mea/crayons.png" media="(max-width:800px)" />
-                                    <source srcset="./resurse/imagini/galeria mea/creioane.png" media="(max-width:1200px)" />
-                                    <img class="creioane" img src="./resurse/imagini/galeria mea/creioane.png" alt="text" /> 
+                                    <source srcset="./resurse/imagini/produse/creion1.jpg" media="(max-width:800px)" />
+                                    <source srcset="./resurse/imagini/produse/creion3.jpg" media="(max-width:1200px)" />
+                                    <img class="creioane" img src="./resurse/imagini/produse/creion3.jpg" alt="text" /> 
                                 </picture>
                                 <figcaption> CREIOANE </figcaption>
                             </figure>
@@ -92,9 +79,9 @@
                             <figure>
                                 <picture>
                                     <!-- il ia pe primul care se potriveste cu query-ul din media-->
-                                    <source srcset="./resurse/imagini/galeria mea/agenda.png" media="(max-width:800px)" />
-                                    <source srcset="./resurse/imagini/galeria mea/agenda.png" media="(max-width:1200px)" />
-                                    <img class="agenda" img src="./resurse/imagini/galeria mea/agenda.png" alt="text" /> 
+                                    <source srcset="./resurse/imagini/produse/caiet1.jpg" media="(max-width:800px)" />
+                                    <source srcset="./resurse/imagini/produse/caiet2.jpg" media="(max-width:1200px)" />
+                                    <img class="agenda" img src="./resurse/imagini/produse/caiet2.jpg" alt="text" /> 
                                 </picture>
                                 <figcaption> AGENDA </figcaption>
                             </figure>
@@ -113,11 +100,11 @@
                                      <source src="resurse/video/micutzy.mp4" type="video/mp4">
                                      <source src="resurse/video/micutzy.ogv" type="video/ogv">
                                      <track default
-                                         src="data:image/png;base64,V0VCVlRUIC0gTWljdXR6eQoKMDA6MDAuMDAwIC0tPiAwMDowMS41MDAgCk1pY3V0enkhISEKCjAwOjAxLjUwMCAtLT4gMDA6MDMuMDAwIApNdWx0IE1pY3V0enkhISEhCgowMDowMy4wMDAgLS0+IDAwOjA0LjUwMApVcHMsIGFtIG11cmRhcml0IGNhc2EhCgowMDowNC41MDAgLS0+IDAwOjA3LjAwMCAKTnUgY29udGVhesSDISBNaWN1dHp5IQoK"
+                                         src="data:image/png;base64,V0VCVlRUIC0gTWljdXR6eQoKMDA6MDAuMDAwIC0tPiAwMDowMS41MDAgbGluZTo5MCUgYWxpZ246bGVmdCBwb3NpdGlvbjoxMCUgc2l6ZToxMDAlCk1pY3V0enkhISEKCjAwOjAxLjUwMCAtLT4gMDA6MDMuMDAwIGxpbmU6OTAlIGFsaWduOmxlZnQgcG9zaXRpb246MTAlIHNpemU6MTAwJQpNdWx0IDxiPk1pY3V0enk8L2I+ISEhIQoKMDA6MDMuMDAwIC0tPiAwMDowNC41MDAgbGluZTo5MCUgYWxpZ246bGVmdCBwb3NpdGlvbjoxMCUgc2l6ZToxMDAlClVwcywgYW0gbXVyZGFyaXQgY2FzYSEKCjAwOjA0LjUwMCAtLT4gMDA6MDcuMDAwIGxpbmU6OTAlIGFsaWduOmxlZnQgcG9zaXRpb246MTAlIHNpemU6MTAwJQpOdSBjb250ZWF6xIMhIE1pY3V0enkhCgo="
                                          kind="captions" srclang="ro" label="romana">
                                      <track
                                          src="data:image/png;base64,
-                                         V0VCVlRUIC0gTWljdXR6eQ0KDQowMDowMC4wMDAgLS0+IDAwOjAxLjUwMCBsaW5lOjENCk1pY3V0enkhISENCg0KMDA6MDEuNTAwIC0tPiAwMDowMy4wMDAgbGluZToxDQpMb3RzIG9mIE1pY3V0enkhISEhDQoNCjAwOjAzLjAwMCAtLT4gMDA6MDQuNTAwIGxpbmU6MQ0KT3VwcywgaG91c2UgZ290IGRpcnR5IQ0KDQowMDowNC41MDAgLS0+IDAwOjA3LjAwMCBsaW5lOjENCkRvZXNuJ3QgbWF0dGVyISBNaWN1dHp5ISEhDQoNCg=="
+                                         V0VCVlRUIC0gTWljdXR6eQ0KDQowMDowMC4wMDAgLS0+IDAwOjAxLjUwMCBsaW5lOjkwJSBhbGlnbjpsZWZ0IHBvc2l0aW9uOjEwJSBzaXplOjEwMCUNCk1pY3V0enkhISENCg0KMDA6MDEuNTAwIC0tPiAwMDowMy4wMDAgbGluZTo5MCUgYWxpZ246bGVmdCBwb3NpdGlvbjoxMCUgc2l6ZToxMDAlDQpMb3RzIG9mIDxiPk1pY3V0enk8L2I+ISEhIQ0KDQowMDowMy4wMDAgLS0+IDAwOjA0LjUwMCBsaW5lOjkwJSBhbGlnbjpsZWZ0IHBvc2l0aW9uOjEwJSBzaXplOjEwMCUNCk91cHMsIGhvdXNlIGdvdCBkaXJ0eSENCg0KMDA6MDQuNTAwIC0tPiAwMDowNy4wMDAgbGluZTo5MCUgYWxpZ246bGVmdCBwb3NpdGlvbjoxMCUgc2l6ZToxMDAlDQpEb2Vzbid0IG1hdHRlciEgTWljdXR6eSEhIQ0KDQo="
                                          kind="captions" srclang="en" label="engleza">
                                  </video>
                              </div>
@@ -194,6 +181,14 @@
             </section>
 
 
+
+
+            <section id="calendar">
+            <div class="container-calendar">
+                <%- include("../fragmente/evenimente.ejs") %>
+                </div>
+            </section>
+<!--
             <section id="calendar">
                 <h2> Calendar evenimente! </h2>
                 <table id="calendar">
@@ -241,9 +236,10 @@
                 </table>
                 
             </section>
+        -->
             
 
-<!--        ????????????????????    -->
+
             <section id="tabel">
                 <div class="scrollbar">       
                     <table class="produse-papetarie">
@@ -367,66 +363,16 @@
 
 
             <section id="diverse">
-                <h2>Informații diverse</h2>
+                <h2> DIVERSE </h2>
+                
 
-                <article>
-                    <h2>Programul nostru de lucru: </h2>
-                    <table id="orar">
-                        <thead>
-    
-                            <tr>
-                                <th>Perioadă</th>
-                                <th>Zi</th>
-                                <th> Interval orar </th>
-                            </tr>
-                        </thead>
-    
-                        <tbody>
-                            <tr>
-                                <td rowspan="5">Zile<br />Lucrătoare</td>
-                                <td>Luni</td>
-                                <td> 10:00 - 20:00</td>
-                            </tr>
-    
-                            <tr>
-                                <td>Marti</td>
-                                <td> 10:00 - 20:00 </td>>
-                            </tr>
-    
-                            <tr>
-                                <td>Miercuri</td>
-                                <td> 10:00 - 20:00 </td>
-                            </tr>
-    
-                            <tr>
-                                <td>Joi</td>
-                                <td> 10:00 - 20:00 </td>
-                            </tr>
-    
-                            <tr>
-                                <td>Vineri</td>
-                                <td> 10:00 - 20:00</td>
-                            </tr>
-    
-                            <tr>
-                                <td rowspan="2">Weekend</td>
-                                <td>Sambata</td>
-                                <td> 10:00 - 18:00 </td>
-                            </tr>
-    
-                            <tr>
-                                <td>Duminica</td>
-                                <td> 10:00 - 14:00 </td>
-                            </tr>
-                        </tbody>
-    
-                        <tfoot>
-                            <tr>
-                                <td colspan="6">Închis cu ocazia sărbătorilor legale.</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </article>
+
+
+                <details>
+                    <summary>Click aici pentru a vedea galeria!</summary>
+                    <%- include("../fragmente/galerie.ejs") %>
+                </details>
+               
 
                 <article id="promotii">
                     <h3>Promoții</h3>
@@ -515,6 +461,14 @@
         <section id="produse">
             <h2>Produse</h2>
             <p> INTERESANTE </p>
+
+            <p>
+            <div id="container">
+                <div id="text_ref">Un text</div>
+                <div id="text-reflected">Un text</div>
+            </div>
+        </p>
+        
             <div class="container-iframe">
                 <div class="taburi-iframe">
                     <a href="https://www.youtube.com/embed/F-gTzEREQO4?si=HZCCyEam__rv1rjk" target="ifr-video"> Cele mai inovative <br/> produse! </a>
@@ -526,11 +480,17 @@
             </div>
         </section>
 
+        <p>
+        <div class="imagine-duotone">
+            <img src="./resurse/imagini/galerie/imagine-duotone.jpg" width="400" height="500" alt="Imagine">
+        </div>
+    </p>
+
 <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! END MAIN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
 </main>
 
 
-<%- includes("../fragmente/footer.ejs") %>
+<%- include("../fragmente/footer.ejs") %>
 
 
 </body>

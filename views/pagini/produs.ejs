@@ -8,10 +8,11 @@
         
         <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
 
-        <title> Papetaria Papirus - home</title>
+        <title> Papetaria Papirus - produse</title>
         <%- include("../fragmente/head") %>     
         <link href="/resurse/css/produs.css" type="text/css" rel="stylesheet" />
     </head>
+    
     <body>
     <%- include("../fragmente/header") %>
 
@@ -22,12 +23,11 @@
                     <h3><span class="nume"><%- locals.prod.nume %></span></h3>
                     <p>Pret: <span class="pret"><%- locals.prod.pret %> </span></p>
                     <p>Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
-                    <p>Ingrediente: <span class="ingrediente"><%- locals.prod.ingrediente %> </span></p>
-                    <p>Calorii: <span class="calorii"><%- locals.prod.calorii %> </span></p>
-                    <p>Gramaj: <span class="gramaj"><%- locals.prod.gramaj %> </span></p>
-                    <p>Categorie: <span class="categorie"><%- locals.prod.categorie %> </span></p>
-                    <p>Pentru diabetici: <span class="pt_diabetici"><%- locals.prod.pt_diabetici %> </span></p>
-                    <p>Data adăugare: <span class="categorie"><%- locals.prod.data_adaugare %> </span></p>
+                    <p>Numar bucati: <span class="descriere"><%- locals.prod.nr_bucati %> </span></p>
+                    <p>Firma: <span class="descriere"><%- locals.prod.firma %> </span></p>
+                    <p>Culoare: <span class="descriere"><%- locals.prod.culoare %> </span></p>
+                    <p>Reciclabil: <span class="descriere"><%- locals.prod.reciclabil %> </span></p>
+                    <p>Data adaugare: <span class="categorie"><%- locals.prod.data_adaugare %> </span></p>
                     <figure class="imag-produs">
                         <img  src="/resurse/imagini/produse/<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]" />
                     </figure>    
