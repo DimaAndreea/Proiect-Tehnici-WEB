@@ -1,8 +1,3 @@
-/*
-
-ATENTIE!
-inca nu am implementat protectia contra SQL injection
-*/
 
 const {Client, Pool}=require("pg");
 

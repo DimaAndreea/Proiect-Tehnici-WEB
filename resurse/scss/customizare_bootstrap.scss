@@ -1,7 +1,7 @@
 @use "../../node_modules/bootstrap/scss/bootstrap.scss" with (
-    $primary: #032174,
-    $secondary: #f5f2f7,
-    $body-color: #03056e,
+    $primary: #2b7a78,
+    $secondary: #3aafa9,
+    $body-color: #17252a,
     $grid-breakpoints: (
         xs: 0,
         sm: 600px,
@@ -24,8 +24,9 @@
     $h6-font-size: 1.15rem,
     $font-family-sans-serif: "Montserrat",
     $body-text-align: justify,
-    $form-range-thumb-active-bg: #4a14d3,
+    $form-range-thumb-active-bg: #2b7a78,
     $form-range-thumb-width: 1.5rem,
-    $form-range-track-bg: #a194d2
+    $form-range-track-bg: #3aafa9,
+    $modal-content-bg: var(--culoare-modal)
 );
 @import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";

@@ -1,97 +1,100 @@
-//setCookie("a",10, 1000)
-function setCookie(nume, val, timpExpirare) {
-    //timpExpirare in milisecunde
-    d = new Date();
-    d.setTime(d.getTime() + timpExpirare);
-    document.cookie = `${nume}=${val}; expires=${d.toUTCString()}`;
+
+function setCookie(name, value, expirySeconds) {
+    var d = new Date();
+    d.setTime(d.getTime() + (expirySeconds * 1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
 }
 
-function getCookie(nume) {
-    vectorParametri = document.cookie.split(";"); // ["a=10","b=ceva"]
-    for (let param of vectorParametri) {
-        if (param.trim().startsWith(nume + "=")) return param.split("=")[1];
+function getCookie(name) {
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var cookies = decodedCookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+        if (cookie.indexOf(name + "=") == 0) {
+            return cookie.substring(name.length + 1, cookie.length);
+        }
     }
-    return null;
+    return "";
 }
 
-function deleteCookie(nume) {
-    console.log(`${nume}; expires=${new Date().toUTCString()}`);
-    document.cookie = `${nume}=0; expires=${new Date().toUTCString()}`;
+function deleteCookie(name) {
+    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
 }
 
 function deleteAllCookies() {
-    vectorParametri = document.cookie.split(";");
-    for (let param of vectorParametri) {
-        numeCookie = param.split("=")[0];
-        console.log(`${numeCookie}; expires=${new Date().toUTCString()}`);
-        document.cookie = `${numeCookie}=0; expires=${new Date().toUTCString()}`;
+    var cookies = document.cookie.split(";");
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        var eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        deleteCookie(name);
     }
 }
 
-window.addEventListener("load", function () {
-    setCookie("ultima_pagina_accesata", document.URL.split("/").pop(), 60000);
-    if (getCookie("acceptat_banner")) {
-        document.getElementById("banner").style.display = "none";
-    }
-
-    this.document.getElementById("ok_cookies").onclick = function () {
-        setCookie("acceptat_banner", true, 60000);
-        document.getElementById("banner").style.display = "none";
+function saveFilters() {
+    let filters = {
+        nume: document.getElementById("inp-nume").value,
+        conectivitate: document.getElementById("inp-conectivitate").value,
+        compatibilitate: Array.from(document.querySelectorAll('input[name="gr_compatibilitate"]:checked')).map(cb => cb.value),
+        compatibilitate_optiune: document.querySelector('input[name="compatibilitate_optiune"]:checked').value,
+        tip_tastatura: document.querySelector('input[name="gr_rad"]:checked').value,
+        pret: document.getElementById("inp-pret").value,
+        categorie: document.getElementById("inp-categorie").value,
+        salveaza_filtrare: document.getElementById("salveaza-filtrare").checked
     };
+    setCookie("filters", JSON.stringify(filters), 3600); // Salvează filtrele într-un cookie pentru o oră
+}
 
-    for (let i = 1; i <= 18; i++) {
-        if (getCookie("acordeon" + i)) {
-            document
-                .getElementById("container-accordion-body" + i)
-                .classList.remove("collapse");
-            document
-                .getElementById("afiseaza-detalii" + i)
-                .classList.remove("collapsed");
-            document
-                .getElementById("afiseaza-detalii" + i)
-                .setAttribute("aria-expanded", "true");
-            document.getElementById(
-                "container-accordion-body" + i
-            ).style.display = "block";
-        }
-
-        this.document.getElementById("afiseaza-detalii" + i).onclick =
-            function () {
-                if (!getCookie("acordeon" + i)) {
-                    setCookie("acordeon" + i, true, 60000);
-                    document
-                        .getElementById("container-accordion-body" + i)
-                        .classList.remove("collapse");
-                    document
-                        .getElementById("afiseaza-detalii" + i)
-                        .classList.remove("collapsed");
-                    document
-                        .getElementById("afiseaza-detalii" + i)
-                        .setAttribute("aria-expanded", "true");
-                    document.getElementById(
-                        "container-accordion-body" + i
-                    ).style.display = "block";
-                } else {
-                    deleteCookie("acordeon" + i);
-                    document
-                        .getElementById("container-accordion-body" + i)
-                        .classList.add("collapse");
-                    document
-                        .getElementById("afiseaza-detalii" + i)
-                        .classList.add("collapsed");
-                    document
-                        .getElementById("afiseaza-detalii" + i)
-                        .setAttribute("aria-expanded", "false");
-                    document.getElementById(
-                        "container-accordion-body" + i
-                    ).style.display = "none";
-                }
-            };
+function loadFilters() {
+    let filters = getCookie("filters");
+    if (filters) {
+        filters = JSON.parse(filters);
+        document.getElementById("inp-nume").value = filters.nume || "";
+        document.getElementById("inp-conectivitate").value = filters.conectivitate || "";
+        document.querySelectorAll('input[name="gr_compatibilitate"]').forEach(cb => {
+            cb.checked = filters.compatibilitate.includes(cb.value);
+        });
+        document.querySelector(`input[name="compatibilitate_optiune"][value="${filters.compatibilitate_optiune}"]`).checked = true;
+        document.querySelector(`input[name="gr_rad"][value="${filters.tip_tastatura}"]`).checked = true;
+        document.getElementById("inp-pret").value = filters.pret || 0;
+        document.getElementById("inp-categorie").value = filters.categorie || "toate";
+        document.getElementById("salveaza-filtrare").checked = filters.salveaza_filtrare || false; 
     }
-});
+}
 
-window.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("ultima-pagina-accesata").innerHTML = getCookie(
-        "ultima_pagina_accesata"
-    );
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("filtrare").addEventListener("click", function() {
+        saveFilters();
+    });
+
+
+    setCookie("ultima_pagina_accesata", document.URL.split("/").pop(), 60); 
+
+    var okCookiesButton = document.getElementById("ok_cookies");
+    if (okCookiesButton) {
+        okCookiesButton.onclick = function () {
+            setCookie("acceptat_banner", true, 60);
+            var banner = document.getElementById("banner");
+            if (banner) {
+                banner.style.display = "none";
+                loadFilters(); 
+            }
+        };
+    }
+
+    document.getElementById("ultima-pagina-accesata").innerHTML = getCookie("ultima_pagina_accesata");
+
+    if (getCookie("acceptat_banner")) {
+        loadFilters(); 
+    }
+
+
+    var banner = document.getElementById("banner");
+    if (!getCookie("acceptat_banner")) {
+        if (banner) {
+            banner.style.display = "flex";
+        }
+    }
 });

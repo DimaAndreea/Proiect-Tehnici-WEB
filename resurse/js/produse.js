@@ -207,6 +207,7 @@ window.addEventListener("load", function () {
     };
 
     document.getElementById("inp-nume").oninput = applyFilters;
+
     document.getElementById("inp-culoare").onchange = applyFilters;
 
     const vRadio = document.getElementsByName("gr_rad_firma");

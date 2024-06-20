@@ -2,6 +2,7 @@ main {
   --padd-main:1rem;
   padding-left: var(--padd-main);
   padding-right: var(--padd-main);
+  --c1-marcare: rgb(226, 222, 222);
 }
 
 .grid-produse {
@@ -25,11 +26,11 @@ main {
 }
 
 .grid-produse .produs h3 a {
-  color: black;
+  color: rgb(212, 147, 147);
 }
 
 .grid-produse .produs h3 a:hover {
-  color: white;
+  color: var(--c1-marcare);
 }
 
 .grid-produse .produs figure {
@@ -64,11 +65,12 @@ main {
 
 .produs {
   position: relative;
+  padding: 10px;
 }
 
 .selecteaza-cos {
   display: inline-block;
-  background-color: var(--culoare-mov);
+  background-color: var(--culoare3);
   position: absolute;
   bottom: 0.5rem;
   right: 0.5rem;
@@ -79,8 +81,8 @@ main {
 }
 
 .selecteaza-cos:hover {
-  background-color: var(--cl-marcare);
-  border: 1px solid var(--culoare-mov);
+  background-color: var(--culoare5);
+  border: 1px solid var(--culoare2);
 }
 
 .produs.cel-mai-ieftin {

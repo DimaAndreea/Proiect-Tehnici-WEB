@@ -252,6 +252,50 @@ app.get(["/","/home","/index"],  async function(req, res){
 })
 
 
+
+
+
+
+
+
+app.get("/seturi", function(req, res) {
+    client.query(`
+      SELECT s.id, s.nume_set, s.descriere_set, 
+             array_agg(p.nume) AS produse, 
+             array_agg(p.pret) AS preturi, 
+             array_agg(p.id) AS produs_ids
+      FROM seturi s
+      JOIN asociere_set a ON s.id = a.id_set
+      JOIN papetarie p ON a.id_produs = p.id
+      GROUP BY s.id, s.nume_set, s.descriere_set
+  `, function(err, result) {
+        if (err) {
+            console.log(err);
+            afisareEroare(res, 2);
+        } else {
+            let seturi = result.rows.map(set => {
+                let pret_total = set.preturi.reduce((total, pret) => total + parseFloat(pret), 0);
+                let n = set.preturi.length;
+                let reducere = Math.min(5, n) * 5;
+                let pret_final = pret_total * (1 - reducere / 100);
+                return {
+                    ...set,
+                    pret_total,
+                    pret_final
+                };
+            });
+            res.render("pagini/seturi", {
+                seturi
+            });
+        }
+    });
+});
+
+
+
+
+
+
 app.get("/galerie", function(req,res){
     res.render("pagini/galerie", {ip:req.ip, imagini:obGlobal.obImagini.imagini});
 })
